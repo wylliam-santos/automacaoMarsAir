@@ -6,7 +6,6 @@
         quero evitar que clientes em potencial pesquisem viagens inválidas para
         que não percam tempo e reserve viagens válidas
 
-@temp
 Cenário: Validar a mensagem para retorno inferior a 1 ano
 
     Dado que acesso o portal MarsAir

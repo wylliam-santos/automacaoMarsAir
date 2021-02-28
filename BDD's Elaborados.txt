@@ -1,0 +1,84 @@
+Funcionalidade: Fluxo de Pesquisa Básico
+
+    Como Diretor de Vendas da MarsAir (Mark),
+    Quero que os clientes em potencial possam pesquisar voos para Marte para
+    Que vejam quais viagens estão disponíveis
+
+    Cenario: Validar se existem os campos de saida e retorno
+
+        Dado que acesso o portal MarsAir
+        Quando a página é carregada
+        Então eu devo visualizar os campos de Saida e Retorno no formulário
+
+    Cenario: Validar as opções de voos semestrais
+
+        Dado que acesso o portal MarsAir
+        Quando a página é carregada
+        Então eu posso selecionar as opções de julho e dezembro para pesquisa
+
+    Cenario: Validar as opções para os próximos dois anos
+
+        Dado que acesso o portal MarsAir
+        Quando a página é carregada
+        Então eu posso selecionar voos para os próximos dois anos
+
+    Cenario: Validar acentos disponiveis
+
+        Dado que acesso o portal MarsAir
+        Quando eu faço uma pesquisa com acentos disponiveis
+        Então eu devo visualizar a mensagem de sucesso: "Seats available! Call 0800 MARSAIR to book!"
+
+    Cenario: Validar acentos indisponiveis
+
+        Dado que acesso o portal MarsAir
+        Quando eu faço uma pesquisa com acentos indisponiveis
+        Então eu devo visualizar a mensagem de erro: "Sorry, there are no more seats available."
+
+Funcionalidade: Datas de Devolução inválidas
+
+    Como Diretor de Vendas da MarsAir (Mark), 
+    quero evitar que clientes em potencial pesquisem viagens inválidas para
+    que não percam tempo e reserve viagens válidas
+
+    Cenário: Validar a mensagem para retorno inferior a 1 ano
+
+    Dado que acesso o portal MarsAir
+    Quando faço uma pesquisa com data de retorno menor que um ano
+    Então devo visualizar a mensagem: "Unfortunately, this schedule is not possible. Please try again."
+
+Funcionalidade: Link para a página inicial
+
+    Como Diretor de Vendas da MarsAir (Mark), 
+    Quero que os clientes em potencial possam voltar à pesquisa de voos de qualquer lugar do site para
+    Que sejam orientados a reservar viagens
+
+    Cenario: Visualizar o titulo de reserva de passagens
+
+        Dado que acesso o portal MarsAir
+        Quando a página é carregada
+        Então eu devo visualizar o titulo: "Book a ticket to the red planet now!"
+
+    Cenario: Retornar a tela inicial
+
+        Dado que acesso o portal MarsAir
+        Quando eu faço uma pesquisa com acentos disponiveis 
+        E clico no logotipo da MarsAir
+        Então devo ser redirecionado para a tela inicial
+
+Funcionalidade: Códigos Promocionais
+
+    Como Diretor de Vendas da MarsAir (Mark), 
+    quero distribuir códigos promocionais aos clientes para
+    que eles obtenham descontos e fiquem mais tentados a comprar ingressos
+
+Cenario: Validar inserção de código promocional válido
+
+    Dado que acesso o portal MarsAir
+    Quando eu faço a inclusão de um código válido
+    Então eu visualizo a mensagem de sucesso: "Promotional code AF3-FJK-418 used: 30% discount!"
+
+Cenario: Validar inserção de código promocional inválido
+
+    Dado que acesso o portal MarsAir
+    Quando eu faço a inclusão de um código inválido
+    Então visualizo a mensagem de erro: "Sorry, code JJ5-OPQ-320 is not valid"
